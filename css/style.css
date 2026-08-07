@@ -1,0 +1,409 @@
+/* ============================================================
+   style.css — Expense & Budget Visualizer
+   ============================================================ */
+
+/* ============================================================
+   1. CSS Custom Properties — Light Theme
+   ============================================================ */
+:root[data-theme="light"] {
+  /* Backgrounds */
+  --bg:             #f0f2f5;       /* page background — light grey */
+  --surface:        #ffffff;       /* card / panel background */
+  --surface-alt:    #f7f8fa;       /* subtle alternate surface */
+
+  /* Text */
+  --text:           #1a1d23;       /* primary text — near-black */
+  --text-muted:     #6b7280;       /* secondary / helper text */
+
+  /* Accent — blue */
+  --accent:         #2563eb;       /* primary action colour */
+  --accent-hover:   #1d4ed8;       /* accent on hover / focus */
+  --accent-text:    #ffffff;       /* text on accent backgrounds */
+
+  /* Borders & Dividers */
+  --border:         #d1d5db;       /* default border */
+  --border-focus:   #2563eb;       /* input focus ring */
+
+  /* Semantic */
+  --danger:         #dc2626;       /* error / delete */
+  --danger-hover:   #b91c1c;       /* danger on hover */
+  --success:        #16a34a;       /* confirmation / positive */
+
+  /* Shadows */
+  --shadow:         0 1px 3px rgba(0, 0, 0, 0.10),
+                    0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md:      0 4px 6px rgba(0, 0, 0, 0.07),
+                    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================================
+   2. CSS Custom Properties — Dark Theme
+   ============================================================ */
+:root[data-theme="dark"] {
+  /* Backgrounds */
+  --bg:             #0f172a;       /* page background — deep navy */
+  --surface:        #1e293b;       /* card / panel background */
+  --surface-alt:    #263347;       /* subtle alternate surface */
+
+  /* Text */
+  --text:           #f1f5f9;       /* primary text — near-white */
+  --text-muted:     #94a3b8;       /* secondary / helper text */
+
+  /* Accent — lighter blue for dark bg contrast */
+  --accent:         #3b82f6;       /* primary action colour */
+  --accent-hover:   #60a5fa;       /* accent on hover / focus */
+  --accent-text:    #ffffff;       /* text on accent backgrounds */
+
+  /* Borders & Dividers */
+  --border:         #334155;       /* default border */
+  --border-focus:   #3b82f6;       /* input focus ring */
+
+  /* Semantic */
+  --danger:         #ef4444;       /* error / delete */
+  --danger-hover:   #f87171;       /* danger on hover */
+  --success:        #22c55e;       /* confirmation / positive */
+
+  /* Shadows */
+  --shadow:         0 1px 3px rgba(0, 0, 0, 0.40),
+                    0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md:      0 4px 6px rgba(0, 0, 0, 0.35),
+                    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   3. Base — Body
+   Apply theme tokens and smooth theme transition (< 300 ms)
+   ============================================================ */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+
+  /* Requirement 7.2: theme switch completes within 300 ms */
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   4. Header & Theme Toggle
+   ============================================================ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Theme toggle — ghost/outline pill button */
+#theme-toggle {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--surface-alt);
+  border-color: var(--accent);
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   5. Form Elements — #transaction-form and #category-form
+   ============================================================ */
+#transaction-form,
+#category-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+#transaction-form h2,
+#category-form h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Form group: label + input stacked with spacing */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Inputs and selects inside both forms */
+#transaction-form input[type="text"],
+#transaction-form input[type="number"],
+#transaction-form select,
+#category-form input[type="text"],
+#category-form select,
+#sort-section select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  min-height: 44px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  appearance: auto;
+}
+
+#transaction-form input[type="text"]:focus,
+#transaction-form input[type="number"]:focus,
+#transaction-form select:focus,
+#category-form input[type="text"]:focus,
+#category-form select:focus,
+#sort-section select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+#transaction-form input::placeholder,
+#category-form input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Submit buttons inside both forms */
+#transaction-form button[type="submit"],
+#category-form button[type="submit"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  margin-top: 0.25rem;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#transaction-form button[type="submit"]:hover,
+#category-form button[type="submit"]:hover {
+  background-color: var(--accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+#transaction-form button[type="submit"]:focus-visible,
+#category-form button[type="submit"]:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   6. Inline Error Messages — .error-message
+   ============================================================ */
+.error-message {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--danger);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   7. Transaction List Items — #transaction-list li
+   ============================================================ */
+#transaction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* Empty state message */
+#transaction-list p,
+#transaction-list .empty-state {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin: 0;
+}
+
+/* Each transaction card */
+#transaction-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease;
+}
+
+#transaction-list li:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Item name */
+#transaction-list li .tx-name {
+  flex: 1 1 auto;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 0.9375rem;
+  min-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Amount — bold, accent coloured */
+#transaction-list li .tx-amount {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
+
+/* Category badge/pill */
+#transaction-list li .tx-category {
+  display: inline-block;
+  background-color: var(--surface-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.625rem;
+  white-space: nowrap;
+}
+
+/* Date — muted secondary text */
+#transaction-list li .tx-date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Delete button — danger / red */
+#transaction-list li button[data-id],
+#transaction-list li .delete-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+#transaction-list li button[data-id]:hover,
+#transaction-list li .delete-btn:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+
+#transaction-list li button[data-id]:focus-visible,
+#transaction-list li .delete-btn:focus-visible {
+  outline: 2px solid var(--danger);
+  outline-offset: 2px;
+}
+
+/* Responsive: stack tx fields on very narrow screens */
+@media (max-width: 480px) {
+  #transaction-list li {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #transaction-list li .tx-name {
+    width: 100%;
+    white-space: normal;
+  }
+
+  #transaction-list li button[data-id],
+  #transaction-list li .delete-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   8. Spending Chart — #chart-section
+   ============================================================ */
+
+/* Centre the section content and give it vertical breathing room */
+#chart-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Constrain the canvas; height is taller to accommodate the legend below the pie */
+#spending-chart {
+  width: 340px !important;
+  height: 380px !important;
+  max-width: 100%;
+  max-height: min(380px, 100vw - 2rem);
+  margin: 1rem auto 0;
+  display: block;
+  /* Subtle drop-shadow around the canvas */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* Empty-state message centred under the heading */
+#chart-empty-message {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin: 1rem 0 0;
+}
+
