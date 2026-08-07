@@ -1,0 +1,241 @@
+{
+  "pbtResults": {
+    "5.2 Write property test for `validateTransaction` — P2: whitespace names rejected": {
+      "status": "passed",
+      "lastRunTimestamp": 1786113451155
+    },
+    "5.3 Write property test for `validateTransaction` — P3: invalid amounts rejected": {
+      "status": "passed",
+      "lastRunTimestamp": 1786113459999
+    },
+    "5.5 Write property test for `validateCategoryName` — P16: valid names accepted": {
+      "status": "passed",
+      "lastRunTimestamp": 1786113467248
+    },
+    "6.2 Write property test for `calculateBalance` — P11: balance equals sum": {
+      "status": "passed",
+      "lastRunTimestamp": 1786113482925
+    },
+    "6.4 Write property test for `buildChartData` — P12: segments match unique categories": {
+      "status": "passed",
+      "lastRunTimestamp": 1786113493350
+    },
+    "10.1 Write property test for `saveTransactions` / `loadTransactions` — P13: LocalStorage round-trip preserves transaction data": {
+      "status": "passed",
+      "lastRunTimestamp": 1786114319907
+    },
+    "10.2 Write property test for `loadTransactions` — P14: app load restores persisted transactions": {
+      "status": "passed",
+      "lastRunTimestamp": 1786114326042
+    },
+    "10.3 Write property test for `loadTheme` / `saveTheme` — P15: theme preference round-trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1786114333776
+    },
+    "10.4 Write property test for `loadCategories` / `saveCategories` — P18: custom categories round-trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1786114346067
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold project structure and base HTML": [
+      {
+        "executionId": "ebb1f17d-fa21-495b-acdb-fabdbb6b2222",
+        "chatSessionId": "sess_6c6772d0-3be0-46ba-87eb-5bdb430b6e0b",
+        "timestamp": 1786111873630
+      },
+      {
+        "executionId": "ebb1f17d-fa21-495b-acdb-fabdbb6b2222",
+        "chatSessionId": "sess_6c6772d0-3be0-46ba-87eb-5bdb430b6e0b",
+        "timestamp": 1786111951600
+      }
+    ],
+    "2.1 Write the Constants section": [
+      {
+        "executionId": "be16fa32-3169-4391-b1f9-54a3873931d3",
+        "chatSessionId": "sess_848b637b-33eb-41e4-8382-ea82d168e849",
+        "timestamp": 1786111964214
+      },
+      {
+        "executionId": "be16fa32-3169-4391-b1f9-54a3873931d3",
+        "chatSessionId": "sess_848b637b-33eb-41e4-8382-ea82d168e849",
+        "timestamp": 1786112009972
+      }
+    ],
+    "3.1 Define CSS custom properties for light and dark themes": [
+      {
+        "executionId": "6607d8f3-70d0-4a9e-8af8-d5a565989bb8",
+        "chatSessionId": "sess_0758e6d6-1518-4f70-be36-ffff420feb6a",
+        "timestamp": 1786112021421
+      },
+      {
+        "executionId": "6607d8f3-70d0-4a9e-8af8-d5a565989bb8",
+        "chatSessionId": "sess_0758e6d6-1518-4f70-be36-ffff420feb6a",
+        "timestamp": 1786112106729
+      }
+    ],
+    "4.1 Write `loadTransactions()` and `saveTransactions()`": [
+      {
+        "executionId": "54491ff7-78f8-4c81-99ec-c7ddc855a10e",
+        "chatSessionId": "sess_9cd10f4a-69e5-436b-bf8b-18281f6afe75",
+        "timestamp": 1786112125109
+      },
+      {
+        "executionId": "54491ff7-78f8-4c81-99ec-c7ddc855a10e",
+        "chatSessionId": "sess_9cd10f4a-69e5-436b-bf8b-18281f6afe75",
+        "timestamp": 1786112213011
+      }
+    ],
+    "5.1 Write `validateTransaction(name, amount, category)`": [
+      {
+        "executionId": "e8e9acaa-5ad1-43c8-9903-9c3ae179fea6",
+        "chatSessionId": "sess_2bcdf2d2-8374-4de7-8bd6-b136d93e4dfc",
+        "timestamp": 1786112236299
+      },
+      {
+        "executionId": "e8e9acaa-5ad1-43c8-9903-9c3ae179fea6",
+        "chatSessionId": "sess_2bcdf2d2-8374-4de7-8bd6-b136d93e4dfc",
+        "timestamp": 1786112284858
+      }
+    ],
+    "3.3 Style form elements, transaction list items, buttons, and error messages": [
+      {
+        "executionId": "a33d909b-2d20-4700-b435-b457620e310e",
+        "chatSessionId": "sess_2f9370b9-c114-4f43-9e26-124996c47a0f",
+        "timestamp": 1786112299301
+      },
+      {
+        "executionId": "a33d909b-2d20-4700-b435-b457620e310e",
+        "chatSessionId": "sess_2f9370b9-c114-4f43-9e26-124996c47a0f",
+        "timestamp": 1786112436066
+      }
+    ],
+    "6.1 Write `calculateBalance(transactions)`": [
+      {
+        "executionId": "76437388-980f-47f3-ac3c-5428f884e856",
+        "chatSessionId": "sess_9df4b1a0-770a-4c0b-bc05-442b9443c01f",
+        "timestamp": 1786112452130
+      },
+      {
+        "executionId": "76437388-980f-47f3-ac3c-5428f884e856",
+        "chatSessionId": "sess_9df4b1a0-770a-4c0b-bc05-442b9443c01f",
+        "timestamp": 1786112525689
+      }
+    ],
+    "7. Checkpoint — Validate pure logic before wiring to DOM": [
+      {
+        "executionId": "85c3c52c-f202-4570-b577-dd590ace1504",
+        "chatSessionId": "sess_a7c937e2-1e3c-4037-bab9-3db70413dc76",
+        "timestamp": 1786112592473
+      },
+      {
+        "executionId": "85c3c52c-f202-4570-b577-dd590ace1504",
+        "chatSessionId": "sess_a7c937e2-1e3c-4037-bab9-3db70413dc76",
+        "timestamp": 1786113545304
+      }
+    ],
+    "8.1 Write `renderBalance(total)`": [
+      {
+        "executionId": "1eb3e5c6-4b0e-42e9-90c3-6a91f92138d0",
+        "chatSessionId": "sess_b769c071-c82b-4cb2-9ed1-eae74c1c6407",
+        "timestamp": 1786113562654
+      },
+      {
+        "executionId": "1eb3e5c6-4b0e-42e9-90c3-6a91f92138d0",
+        "chatSessionId": "sess_b769c071-c82b-4cb2-9ed1-eae74c1c6407",
+        "timestamp": 1786113861700
+      }
+    ],
+    "9.1 Write `onFormSubmit(event)` for `#transaction-form`": [
+      {
+        "executionId": "ce8781b1-7753-44f3-81ff-6e3d3e27c587",
+        "chatSessionId": "sess_1a33e336-cd95-4186-a31e-66626a38d5c5",
+        "timestamp": 1786113875000
+      },
+      {
+        "executionId": "ce8781b1-7753-44f3-81ff-6e3d3e27c587",
+        "chatSessionId": "sess_1a33e336-cd95-4186-a31e-66626a38d5c5",
+        "timestamp": 1786113994557
+      }
+    ],
+    "10. Implement Storage integration property tests": [
+      {
+        "executionId": "a632abd4-98c0-4845-b6ff-d9921d5420c1",
+        "chatSessionId": "sess_4d25eee0-7313-42a8-b04f-4ed604f2aafd",
+        "timestamp": 1786114057340
+      },
+      {
+        "executionId": "a632abd4-98c0-4845-b6ff-d9921d5420c1",
+        "chatSessionId": "sess_4d25eee0-7313-42a8-b04f-4ed604f2aafd",
+        "timestamp": 1786114367158
+      }
+    ],
+    "6.3 Write `buildChartData(transactions)`": [
+      {
+        "executionId": "27ee1eb5-3f25-49e2-a77e-3776a7f5e987",
+        "chatSessionId": "sess_ed2818b2-7795-4120-99d1-b0193ac5ab27",
+        "timestamp": 1786114514023
+      },
+      {
+        "executionId": "27ee1eb5-3f25-49e2-a77e-3776a7f5e987",
+        "chatSessionId": "sess_ed2818b2-7795-4120-99d1-b0193ac5ab27",
+        "timestamp": 1786114881370
+      }
+    ],
+    "9.12 Write `init()` and bind event listeners": [
+      {
+        "executionId": "78af6bde-7181-4f31-a421-5cfea37c0f25",
+        "chatSessionId": "sess_adad78a3-8909-46c6-8e43-0dc7aaf81bcf",
+        "timestamp": 1786114991146
+      },
+      {
+        "executionId": "78af6bde-7181-4f31-a421-5cfea37c0f25",
+        "chatSessionId": "sess_adad78a3-8909-46c6-8e43-0dc7aaf81bcf",
+        "timestamp": 1786115097729
+      }
+    ],
+    "6.5 Write `sortTransactions(transactions, sortKey)`": [
+      {
+        "executionId": "721d60f1-48e8-4a19-9e0f-88215a94e864",
+        "chatSessionId": "sess_f318a4f2-7d92-4059-938a-88d08a42db61",
+        "timestamp": 1786115197376
+      },
+      {
+        "executionId": "721d60f1-48e8-4a19-9e0f-88215a94e864",
+        "chatSessionId": "sess_f318a4f2-7d92-4059-938a-88d08a42db61",
+        "timestamp": 1786115732629
+      }
+    ],
+    "6. Implement Business Logic layer (`js/app.js`)": [
+      {
+        "executionId": "721d60f1-48e8-4a19-9e0f-88215a94e864",
+        "chatSessionId": "sess_f318a4f2-7d92-4059-938a-88d08a42db61",
+        "timestamp": 1786115735972
+      }
+    ],
+    "8.4 Write `renderList(transactions)`": [
+      {
+        "executionId": "038ab971-234a-4fcd-a01a-51ec91c4d10b",
+        "chatSessionId": "sess_3380b782-7c49-4622-9f5d-21080d40cec8",
+        "timestamp": 1786115785762
+      },
+      {
+        "executionId": "038ab971-234a-4fcd-a01a-51ec91c4d10b",
+        "chatSessionId": "sess_3380b782-7c49-4622-9f5d-21080d40cec8",
+        "timestamp": 1786115976737
+      }
+    ],
+    "8.2 Write `renderChart(chartData)`": [
+      {
+        "executionId": "2e487812-0892-4384-8ce2-5d489cfd240b",
+        "chatSessionId": "sess_7724f0f6-e579-4020-8369-90160ea08509",
+        "timestamp": 1786115990970
+      },
+      {
+        "executionId": "2e487812-0892-4384-8ce2-5d489cfd240b",
+        "chatSessionId": "sess_7724f0f6-e579-4020-8369-90160ea08509",
+        "timestamp": 1786116327369
+      }
+    ]
+  }
+}
